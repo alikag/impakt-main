@@ -1427,4 +1427,14 @@ body:not(.loaded) * {
     background: transparent !important;
     backdrop-filter: none !important;
   }
+}
+
+.hero-graphic{
+    max-width:320px;
+    width:80%;
+    margin:0 auto var(--spacing-lg);
+    display:block;
+}
+@media(min-width:768px){
+    .hero-graphic{max-width:400px;} 
 } 
