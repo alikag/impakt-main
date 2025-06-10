@@ -1430,11 +1430,12 @@ body:not(.loaded) * {
 }
 
 .hero-graphic{
-    max-width:320px;
-    width:80%;
+    max-width:500px;
+    width:100%;
+    height:auto;
     margin:0 auto var(--spacing-lg);
     display:block;
 }
-@media(min-width:768px){
-    .hero-graphic{max-width:400px;} 
+@media(min-width:1200px){
+    .hero-graphic{max-width:600px;}
 } 
