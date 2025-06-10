@@ -1414,4 +1414,17 @@ body:not(.loaded) * {
       background-color: transparent !important;
       backdrop-filter: none !important;
   }
+}
+
+/* Desktop navbar fixed background with transparent inner containers */
+@media (min-width: 769px) {
+  .navbar {
+    background: rgba(15, 23, 42, 0.95) !important; /* dark navy */
+    box-shadow: 0 1px 3px rgba(0,0,0,.6);
+  }
+  .nav-wrapper,
+  .nav-menu {
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
 } 
