@@ -1383,4 +1383,35 @@ body:not(.loaded) * {
         bottom: 10px;
         right: 10px;
     }
+}
+
+/* Fix: remove background boxes behind desktop nav links */
+@media (min-width: 769px) {
+    .nav-menu {
+        background: transparent;
+    }
+    body.dark-mode .nav-menu {
+        background: transparent;
+    }
+}
+
+/* Desktop navbar transparency */
+@media (min-width: 769px) {
+    .navbar {
+        background: transparent;
+        box-shadow: none;
+    }
+    .nav-wrapper {
+        background: transparent;
+    }
+}
+
+@media (min-width: 769px) {
+  .navbar,
+  .navbar::before,
+  .nav-wrapper,
+  .nav-menu {
+      background-color: transparent !important;
+      backdrop-filter: none !important;
+  }
 } 
