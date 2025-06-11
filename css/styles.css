@@ -539,8 +539,8 @@ p {
     display: flex;
     align-items: center;
     gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
-    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
     border-bottom: 2px solid var(--gray-200);
 }
 
@@ -561,7 +561,7 @@ p {
 .holding-content p {
     color: var(--gray-700);
     line-height: 1.8;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     font-size: var(--font-size-lg);
 }
 
@@ -584,15 +584,16 @@ p {
     list-style: none;
     padding: 0;
     display: grid;
-    gap: var(--spacing-xs);
+    gap: 0;
 }
 
 .holding-highlights li {
     color: var(--gray-700);
-    padding: var(--spacing-xs) 0;
+    padding: 0.25rem 0;
     padding-left: var(--spacing-lg);
     position: relative;
     font-size: var(--font-size-base);
+    line-height: 1.6;
 }
 
 .holding-highlights li:before {
