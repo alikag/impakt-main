@@ -514,6 +514,93 @@ p {
     color: var(--gray-400);
 }
 
+/* Current Holdings Section */
+.holdings {
+    padding: var(--spacing-3xl) 0;
+    background: var(--white);
+}
+
+.holdings-grid {
+    display: grid;
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.holding-card {
+    background: var(--gray-50);
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.holding-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.holding-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.holding-title h3 {
+    color: var(--dark-color);
+    margin: 0;
+}
+
+.holding-content p {
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.holding-highlights {
+    margin-bottom: var(--spacing-xl);
+}
+
+.holding-highlights h4 {
+    color: var(--dark-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.holding-highlights ul {
+    list-style: none;
+    padding: 0;
+}
+
+.holding-highlights li {
+    color: var(--gray-600);
+    padding: var(--spacing-xs) 0;
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.holding-highlights li:before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.holding-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.holding-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
 /* Process Section */
 .process {
     padding: var(--spacing-3xl) 0;
@@ -908,6 +995,26 @@ p {
         gap: var(--spacing-sm);
     }
     
+    /* Mobile Holdings */
+    .holding-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .holding-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .holding-images {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .holding-image {
+        height: 200px;
+    }
+    
     /* Mobile Process */
     .process-timeline {
         grid-template-columns: 1fr;
@@ -1187,9 +1294,34 @@ body.dark-mode .image-placeholder i {
     color: var(--dark-text-secondary);
 }
 
+/* Dark Mode Holdings */
+body.dark-mode .holdings {
+    background: var(--dark-bg);
+}
+
+body.dark-mode .holding-card {
+    background: var(--dark-surface);
+}
+
+body.dark-mode .holding-title h3 {
+    color: var(--dark-text);
+}
+
+body.dark-mode .holding-content p {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .holding-highlights h4 {
+    color: var(--dark-text);
+}
+
+body.dark-mode .holding-highlights li {
+    color: var(--dark-text-secondary);
+}
+
 /* Dark Mode Process */
 body.dark-mode .process {
-    background: var(--dark-bg);
+    background: var(--dark-surface);
 }
 
 body.dark-mode .process-step p {
