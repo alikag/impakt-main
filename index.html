@@ -54,7 +54,10 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <img src="images/hero-tree.png" alt="Technology growth tree illustration" class="hero-graphic" loading="lazy" width="320" height="213">
+                <!-- Interactive Ballpit Canvas -->
+                <div id="hero-canvas-wrapper" style="position:relative;overflow:hidden;width:100%;height:500px;margin-bottom:var(--spacing-lg);">
+                    <canvas id="hero-canvas" style="width:100%;height:100%;display:block;"></canvas>
+                </div>
                 <h1 class="hero-title">We Buy Wonderful Businesses</h1>
                 <p class="hero-subtitle">Partnering with profitable businesses to unlock their full potential through capital, technology, and strategic expertise</p>
                 <div class="hero-stats">
@@ -327,8 +330,11 @@
         </div>
     </footer>
 
+    <!-- Three.js CDN -->
+    <script src="https://unpkg.com/three@0.161.0/build/three.min.js"></script>
+    <!-- Ballpit physics (stub) -->
+    <script src="js/ballpit.js"></script>
     <script src="security-enhancements.js"></script>
-    <script src="js/main.js"></script>
     <script>
         // Initialize security features
         if (window.SecurityEnhancements) {
