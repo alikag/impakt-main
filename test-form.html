@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Form - impakt Labs</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark-mode">
+    <div class="container" style="padding: 40px 20px;">
+        <h1>Test Contact Form</h1>
+        <p>This is a test form with no JavaScript to verify Netlify Forms is working.</p>
+        
+        <form name="test-contact" method="POST" data-netlify="true" style="max-width: 500px; margin: 40px 0;">
+            <input type="hidden" name="form-name" value="test-contact">
+            
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            
+            <div class="form-group">
+                <textarea name="message" placeholder="Message" rows="4"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit Test</button>
+        </form>
+        
+        <p><a href="/">Back to main site</a></p>
+    </div>
+</body>
+</html>
