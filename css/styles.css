@@ -837,7 +837,7 @@ p {
     .hero-cta {
         flex-direction: column;
         width: 100%;
-        padding: 0 var(--spacing-md);
+        padding: 0;
         align-items: center;
         gap: var(--spacing-sm);
     }
@@ -1374,19 +1374,6 @@ body:not(.loaded) * {
         -webkit-tap-highlight-color: rgba(37, 99, 235, 0.1);
     }
     
-    /* Sticky CTA for mobile */
-    .hero-cta {
-        position: sticky;
-        bottom: 0;
-        background: linear-gradient(to top, var(--white) 70%, transparent);
-        padding: var(--spacing-md) var(--spacing-md) var(--spacing-lg);
-        margin: 0 calc(-1 * var(--spacing-md));
-        z-index: 10;
-    }
-    
-    body.dark-mode .hero-cta {
-        background: linear-gradient(to top, var(--dark-bg) 70%, transparent);
-    }
     
     /* Better spacing for mobile */
     section {
