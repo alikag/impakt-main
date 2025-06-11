@@ -613,10 +613,8 @@ p {
 
 .holding-image {
     width: 100%;
-    height: auto;
-    aspect-ratio: 16/10;
+    height: 300px;
     object-fit: cover;
-    object-position: center center;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-base);
@@ -1055,7 +1053,7 @@ p {
     }
     
     .holding-image {
-        aspect-ratio: 16/9;
+        height: 250px;
     }
     
     /* Mobile Process */
@@ -1371,9 +1369,6 @@ body.dark-mode .holding-highlights li {
     color: var(--dark-text-secondary);
 }
 
-body.dark-mode .holding-image {
-    background: var(--dark-surface-light);
-}
 
 /* Dark Mode Process */
 body.dark-mode .process {
