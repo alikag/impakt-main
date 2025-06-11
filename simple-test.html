@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Test</title>
+</head>
+<body>
+    <h1>Simple Form Test</h1>
+    
+    <!-- Test 1: Exact copy of working fields -->
+    <h2>Test 1: Only Name and Email (Should Work)</h2>
+    <form name="test1" method="POST" netlify>
+        <p>Name: <input type="text" name="name" /></p>
+        <p>Email: <input type="email" name="email" /></p>
+        <button type="submit">Submit Test 1</button>
+    </form>
+    
+    <hr>
+    
+    <!-- Test 2: Add one more field -->
+    <h2>Test 2: Name, Email + Phone</h2>
+    <form name="test2" method="POST" netlify>
+        <p>Name: <input type="text" name="name" /></p>
+        <p>Email: <input type="email" name="email" /></p>
+        <p>Phone: <input type="text" name="phone" /></p>
+        <button type="submit">Submit Test 2</button>
+    </form>
+    
+    <hr>
+    
+    <!-- Test 3: Different field types -->
+    <h2>Test 3: All Fields as Text Inputs</h2>
+    <form name="test3" method="POST" netlify>
+        <p>Name: <input type="text" name="name" /></p>
+        <p>Email: <input type="text" name="email" /></p>
+        <p>Phone: <input type="text" name="phone" /></p>
+        <p>Company: <input type="text" name="company" /></p>
+        <p>Revenue: <input type="text" name="revenue" /></p>
+        <p>Message: <input type="text" name="message" /></p>
+        <button type="submit">Submit Test 3</button>
+    </form>
+</body>
+</html>

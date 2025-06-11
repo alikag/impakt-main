@@ -9,5 +9,6 @@
     X-XSS-Protection = "1; mode=block"
 
 # Form handling
-[forms]
-  honeypot = "bot-field"
+# Temporarily disabled to debug form issues
+# [forms]
+#   honeypot = "bot-field"

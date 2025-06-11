@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raw Form - No CSS/JS</title>
+</head>
+<body>
+    <h1>Raw Contact Form - No Styling or Scripts</h1>
+    
+    <form name="raw-contact" method="POST" netlify>
+        <p>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value="Test Name" required>
+        </p>
+        
+        <p>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" value="test@example.com" required>
+        </p>
+        
+        <p>
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone" value="555-0123">
+        </p>
+        
+        <p>
+            <label for="company">Company:</label><br>
+            <input type="text" id="company" name="company" value="Test Corp">
+        </p>
+        
+        <p>
+            <label for="revenue">Revenue:</label><br>
+            <select id="revenue" name="revenue">
+                <option value="">Select...</option>
+                <option value="500k-1m" selected>$500K - $1M</option>
+                <option value="1m-2.5m">$1M - $2.5M</option>
+                <option value="2.5m-5m">$2.5M - $5M</option>
+                <option value="5m+">$5M+</option>
+            </select>
+        </p>
+        
+        <p>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50">This is a test message with all fields filled.</textarea>
+        </p>
+        
+        <p>
+            <button type="submit">Submit All Fields</button>
+        </p>
+    </form>
+    
+    <hr>
+    <p><strong>All fields are pre-filled. Submit to see if all data is captured.</strong></p>
+    <p>This form has NO CSS and NO JavaScript - just pure HTML.</p>
+</body>
+</html>
