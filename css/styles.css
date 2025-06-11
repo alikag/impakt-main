@@ -755,8 +755,14 @@ p {
 /* Responsive Design - Mobile */
 @media (max-width: 768px) {
     /* Mobile Navigation */
+    .navbar {
+        padding: var(--spacing-sm) 0;
+    }
+    
     .mobile-toggle {
         display: flex;
+        position: relative;
+        z-index: 1001;
     }
     
     .nav-menu {
@@ -832,10 +838,13 @@ p {
         flex-direction: column;
         width: 100%;
         padding: 0 var(--spacing-md);
+        align-items: center;
+        gap: var(--spacing-sm);
     }
     
     .hero-cta .btn {
         width: 100%;
+        max-width: 300px;
     }
     
     /* Mobile Trust Bar */
@@ -1053,8 +1062,9 @@ body.dark-mode p {
 
 /* Dark Mode Navigation */
 body.dark-mode .navbar {
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(15, 23, 42, 0.98);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
 }
 
 body.dark-mode .logo-text {
@@ -1070,7 +1080,7 @@ body.dark-mode .nav-link:hover {
 }
 
 body.dark-mode .mobile-toggle span {
-    background: var(--dark-text-secondary);
+    background: var(--dark-text);
 }
 
 /* Dark Mode Hero */
@@ -1321,6 +1331,11 @@ body.dark-mode .nav-link {
     body.dark-mode .nav-menu {
         background: var(--dark-bg);
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    body.dark-mode .nav-link {
+        border-bottom-color: var(--dark-border);
+        color: var(--dark-text-secondary);
     }
     
     body.dark-mode .process-step {
