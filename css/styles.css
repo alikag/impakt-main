@@ -528,77 +528,101 @@ p {
 
 .holding-card {
     background: var(--gray-50);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-2xl);
     border-radius: 16px;
     box-shadow: var(--shadow-sm);
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .holding-header {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--gray-200);
 }
 
 .holding-logo {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 .holding-title h3 {
     color: var(--dark-color);
     margin: 0;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
 }
 
 .holding-content p {
     color: var(--gray-700);
-    line-height: 1.6;
-    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-lg);
 }
 
 .holding-highlights {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
     margin-bottom: var(--spacing-xl);
+    border: 1px solid var(--gray-200);
 }
 
 .holding-highlights h4 {
     color: var(--dark-color);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
 }
 
 .holding-highlights ul {
     list-style: none;
     padding: 0;
+    display: grid;
+    gap: var(--spacing-sm);
 }
 
 .holding-highlights li {
-    color: var(--gray-600);
-    padding: var(--spacing-xs) 0;
-    padding-left: var(--spacing-md);
+    color: var(--gray-700);
+    padding: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
     position: relative;
+    font-size: var(--font-size-base);
 }
 
 .holding-highlights li:before {
-    content: "•";
-    color: var(--primary-color);
+    content: "✓";
+    color: var(--secondary-color);
     font-weight: bold;
     position: absolute;
     left: 0;
+    font-size: var(--font-size-lg);
 }
 
 .holding-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
 }
 
 .holding-image {
     width: 100%;
-    height: 250px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.holding-image:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Process Section */
@@ -996,23 +1020,40 @@ p {
     }
     
     /* Mobile Holdings */
+    .holding-card {
+        padding: var(--spacing-lg);
+    }
+    
     .holding-header {
         flex-direction: column;
         text-align: center;
+        gap: var(--spacing-md);
     }
     
     .holding-logo {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .holding-title h3 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .holding-content p {
+        font-size: var(--font-size-base);
+    }
+    
+    .holding-highlights {
+        padding: var(--spacing-md);
     }
     
     .holding-images {
         grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
+        gap: var(--spacing-md);
     }
     
     .holding-image {
-        height: 200px;
+        height: 250px;
     }
     
     /* Mobile Process */
@@ -1301,6 +1342,15 @@ body.dark-mode .holdings {
 
 body.dark-mode .holding-card {
     background: var(--dark-surface);
+}
+
+body.dark-mode .holding-header {
+    border-bottom-color: var(--dark-border);
+}
+
+body.dark-mode .holding-highlights {
+    background: var(--dark-surface-light);
+    border-color: var(--dark-border);
 }
 
 body.dark-mode .holding-title h3 {
