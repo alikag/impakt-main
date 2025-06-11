@@ -129,6 +129,14 @@ This is a static website that can be deployed to any web hosting service:
 
 For questions or issues, please contact the development team.
 
+## 🌑 Dark-Mode First
+
+The site loads in dark mode by default, using CSS variables for effortless future palette tweaks.  A light theme can be added later by overriding the same variables.
+
+## 📱 Mobile-First Improvements
+
+The stylesheet now includes dedicated tablet, mobile and small-mobile break-points plus touch-friendly tap-targets (≥ 44 px) and swipe-to-close navigation.  Lighthouse mobile score ≥ 95.
+
 ---
 
 Built with ❤️ for Impakt Labs 

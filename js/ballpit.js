@@ -8,7 +8,8 @@
     SphereGeometry, AmbientLight, PointLight, ACESFilmicToneMapping, Raycaster, Plane
   } = THREE;
   
-  const { RoomEnvironment } = THREE;
+  // RoomEnvironment might not be available in the CDN version
+  const RoomEnvironment = THREE.RoomEnvironment;
 
   // Three.js wrapper class
   class ThreeWrapper {
@@ -568,17 +569,22 @@
       const config = { ...defaultConfig, ...userConfig };
       
       // Setup environment
-      const pmremGenerator = new PMREMGenerator(renderer, 0.04);
-      const roomEnvironment = new RoomEnvironment();
-      const envTexture = pmremGenerator.fromScene(roomEnvironment).texture;
+      let envTexture = null;
+      if (RoomEnvironment) {
+        const pmremGenerator = new PMREMGenerator(renderer, 0.04);
+        const roomEnvironment = new RoomEnvironment();
+        envTexture = pmremGenerator.fromScene(roomEnvironment).texture;
+      }
       
       // Create geometry and material
       const geometry = new SphereGeometry();
-      const material = new SubsurfaceMaterial({ 
-        envMap: envTexture, 
-        ...config.materialParams 
-      });
-      material.envMapRotation.x = -Math.PI / 2;
+      const materialParams = envTexture 
+        ? { envMap: envTexture, ...config.materialParams }
+        : config.materialParams;
+      const material = new SubsurfaceMaterial(materialParams);
+      if (envTexture) {
+        material.envMapRotation.x = -Math.PI / 2;
+      }
       
       super(geometry, material, config.count);
       
@@ -713,37 +719,45 @@
   };
 
   // Initialize the ballpit
-  const canvas = document.getElementById('hero-canvas');
-  if (canvas) {
-    try {
-      const ballpit = window.createBallpit(canvas, {
-        count: 150,
-        colors: [0x2563eb, 0x10b981, 0x8b5cf6, 0xf59e0b],
-        gravity: 0.3,
-        maxVelocity: 0.2,
-        followCursor: true
-      });
-      
-      // Store reference for potential cleanup
-      window.ballpitInstance = ballpit;
-      
-      console.log('Ballpit animation initialized successfully');
-    } catch (error) {
-      console.error('Failed to initialize ballpit:', error);
-      
-      // Fallback to gradient
-      const ctx = canvas.getContext('2d');
-      const resize = () => {
-        canvas.width = canvas.clientWidth;
-        canvas.height = canvas.clientHeight;
-        const grd = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-        grd.addColorStop(0, '#2563eb33');
-        grd.addColorStop(1, '#10b98133');
-        ctx.fillStyle = grd;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-      };
-      window.addEventListener('resize', resize);
-      resize();
+  document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('hero-canvas');
+    console.log('Ballpit init: Canvas found?', !!canvas);
+    console.log('Ballpit init: THREE.js loaded?', typeof THREE !== 'undefined');
+    
+    if (canvas && typeof THREE !== 'undefined') {
+      try {
+        const ballpit = window.createBallpit(canvas, {
+          count: 150,
+          colors: [0x2563eb, 0x10b981, 0x8b5cf6, 0xf59e0b],
+          gravity: 0.3,
+          maxVelocity: 0.2,
+          followCursor: true
+        });
+        
+        // Store reference for potential cleanup
+        window.ballpitInstance = ballpit;
+        
+        console.log('Ballpit animation initialized successfully');
+      } catch (error) {
+        console.error('Failed to initialize ballpit:', error);
+        console.error('Error stack:', error.stack);
+        
+        // Fallback to gradient
+        const ctx = canvas.getContext('2d');
+        const resize = () => {
+          canvas.width = canvas.clientWidth;
+          canvas.height = canvas.clientHeight;
+          const grd = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+          grd.addColorStop(0, '#2563eb33');
+          grd.addColorStop(1, '#10b98133');
+          ctx.fillStyle = grd;
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        };
+        window.addEventListener('resize', resize);
+        resize();
+      }
+    } else {
+      console.error('Ballpit init failed: Canvas or THREE.js not available');
     }
-  }
+  });
 })();
