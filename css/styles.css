@@ -202,7 +202,7 @@ p {
 
 /* Hero Section */
 .hero {
-    padding: calc(var(--spacing-3xl) + 80px) 0 var(--spacing-3xl);
+    padding: calc(var(--spacing-xl) + 80px) 0 var(--spacing-xl);
     background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
     position: relative;
     overflow: hidden;
@@ -212,8 +212,8 @@ p {
 .hero-image-wrapper {
     position: relative;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto var(--spacing-xl);
+    max-width: 400px;
+    margin: 0 auto var(--spacing-md);
 }
 
 .hero-image {
@@ -1315,7 +1315,7 @@ body.dark-mode .nav-link {
     }
     
     .hero-image-wrapper {
-        max-width: 500px;
+        max-width: 300px;
     }
     
     body.dark-mode .nav-menu {
