@@ -337,7 +337,12 @@
                         <div class="form-group">
                             <textarea name="message" placeholder="Tell us about your business (Optional)" rows="4" maxlength="1000"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        <button type="submit" class="btn btn-primary btn-block" id="submit-button">Send Message</button>
+                        <noscript>
+                            <style>
+                                #submit-button { display: block !important; }
+                            </style>
+                        </noscript>
                         <p class="form-disclaimer">Your information is 100% confidential and will only be used to contact you.</p>
                     </form>
                 </div>

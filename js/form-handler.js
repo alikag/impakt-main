@@ -4,6 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!contactForm) return;
     
+    // Check for debug mode
+    const urlParams = new URLSearchParams(window.location.search);
+    const debugMode = urlParams.get('debug') === 'true';
+    
+    if (debugMode) {
+        console.log('Form debug mode - JavaScript handler disabled');
+        return;
+    }
+    
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
@@ -17,6 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // Create form data
             const formData = new FormData(contactForm);
+            
+            // Debug: Log form data
+            console.log('Form data being submitted:');
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
             
             // Submit to Netlify
             const response = await fetch('/', {

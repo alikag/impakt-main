@@ -1,0 +1,20 @@
+<!-- This file helps Netlify detect the form during build -->
+<!DOCTYPE html>
+<html>
+<body>
+    <!-- Hidden form for Netlify to detect -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <input type="text" name="company" />
+        <select name="revenue">
+            <option value="500k-1m">$500K - $1M</option>
+            <option value="1m-2.5m">$1M - $2.5M</option>
+            <option value="2.5m-5m">$2.5M - $5M</option>
+            <option value="5m+">$5M+</option>
+        </select>
+        <textarea name="message"></textarea>
+    </form>
+</body>
+</html>

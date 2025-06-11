@@ -91,45 +91,7 @@ const navbar = document.querySelector('.navbar');
 // Use the optimized scroll function for mobile
 window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
 
-// Form Handling with Security
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    
-    // Show loading state
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
-    submitButton.disabled = true;
-    
-    try {
-        // Submit to Netlify Forms
-        const response = await fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString()
-        });
-        
-        if (response.ok) {
-            // Show success message
-            showNotification('Thank you! We\'ll be in touch within 24 hours.', 'success');
-            contactForm.reset();
-        } else {
-            throw new Error('Form submission failed');
-        }
-    } catch (error) {
-        // Show error message
-        showNotification(error.message || 'Something went wrong. Please try again.', 'error');
-    } finally {
-        // Reset button state
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-    }
-});
+// Form handling moved to form-handler.js
 
 // Notification system
 function showNotification(message, type = 'info') {
