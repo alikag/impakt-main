@@ -1,6 +1,6 @@
-# Impakt Labs Website
+# impakt Labs Website
 
-A modern, professional website for Impakt Labs - a business acquisition company that partners with profitable businesses to unlock their full potential.
+A modern, professional website for impakt Labs - a business acquisition company that partners with profitable businesses to unlock their full potential.
 
 ## 🚀 Features
 
@@ -139,4 +139,4 @@ The stylesheet now includes dedicated tablet, mobile and small-mobile break-poin
 
 ---
 
-Built with ❤️ for Impakt Labs 
+Built with ❤️ for impakt Labs 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple HTTP server for local development of Impakt Labs website
+Simple HTTP server for local development of impakt Labs website
 """
 
 import http.server
