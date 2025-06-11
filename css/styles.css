@@ -208,26 +208,19 @@ p {
     overflow: hidden;
 }
 
-/* Hero Canvas */
-#hero-canvas-wrapper {
+/* Hero Image */
+.hero-image-wrapper {
     position: relative;
-    overflow: hidden;
     width: 100%;
-    height: 500px;
-    margin-bottom: var(--spacing-lg);
-    border-radius: 20px;
-    background: transparent;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
 }
 
-#hero-canvas {
+.hero-image {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
-    cursor: grab;
-}
-
-#hero-canvas:active {
-    cursor: grabbing;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
 }
 
 .hero::before {
@@ -1085,10 +1078,8 @@ body.dark-mode .hero {
     background: linear-gradient(135deg, var(--dark-surface) 0%, var(--dark-bg) 100%);
 }
 
-body.dark-mode #hero-canvas-wrapper {
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+body.dark-mode .hero-image {
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
 }
 
 body.dark-mode .hero-title {
@@ -1321,6 +1312,10 @@ body.dark-mode .nav-link {
     
     .theme-toggle i {
         font-size: 20px;
+    }
+    
+    .hero-image-wrapper {
+        max-width: 400px;
     }
     
     body.dark-mode .nav-menu {
