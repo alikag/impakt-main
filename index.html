@@ -307,8 +307,11 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm" name="contact" method="POST" netlify action="/success.html">
+                    <form class="contact-form" id="contactForm" name="contact" method="POST" netlify netlify-honeypot="bot-field" action="/success.html">
                         <input type="hidden" name="form-name" value="contact">
+                        <p style="display:none;">
+                            <label>Don't fill this out: <input name="bot-field" /></label>
+                        </p>
                         <h3>Start the Conversation</h3>
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Your Name" required minlength="2" maxlength="100" autocomplete="name">
