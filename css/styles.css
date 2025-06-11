@@ -1022,39 +1022,56 @@ p {
     
     /* Mobile Holdings */
     .holding-card {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
     }
     
     .holding-header {
         flex-direction: column;
         text-align: center;
-        gap: var(--spacing-md);
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-xs);
+        padding-bottom: var(--spacing-xs);
     }
     
     .holding-logo {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
     
     .holding-title h3 {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-lg);
+        line-height: 1.3;
     }
     
     .holding-content p {
         font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-sm);
+        line-height: 1.6;
     }
     
     .holding-highlights {
-        padding: var(--spacing-md);
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .holding-highlights h4 {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .holding-highlights li {
+        font-size: var(--font-size-sm);
+        padding: 0.125rem 0;
     }
     
     .holding-images {
         grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
     }
     
     .holding-image {
-        height: 300px;
+        height: 250px;
     }
     
     /* Mobile Process */
