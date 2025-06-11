@@ -27,28 +27,47 @@ document.addEventListener('DOMContentLoaded', function() {
             // Create form data
             const formData = new FormData(contactForm);
             
+            // Add form-name field for Netlify
+            formData.append('form-name', 'contact');
+            
             // Debug: Log form data
             console.log('Form data being submitted:');
             for (let [key, value] of formData.entries()) {
                 console.log(`${key}: ${value}`);
             }
             
+            // Convert FormData to URLSearchParams
+            const params = new URLSearchParams();
+            for (let [key, value] of formData.entries()) {
+                params.append(key, value);
+            }
+            
+            console.log('Encoded form data:', params.toString());
+            
             // Submit to Netlify
             const response = await fetch('/', {
                 method: 'POST',
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
+                body: params.toString()
             });
             
-            if (response.ok) {
-                // Success
-                showNotification('Thank you! We\'ll be in touch within 24 hours.', 'success');
-                contactForm.reset();
+            console.log('Response status:', response.status);
+            console.log('Response ok:', response.ok);
+            
+            if (response.ok || response.status === 200) {
+                // Success - redirect to success page
+                window.location.href = '/success';
             } else {
                 // Get error details
                 const text = await response.text();
-                console.error('Form submission failed:', text);
-                throw new Error('Submission failed. Please try again.');
+                console.error('Form submission failed:', response.status, text);
+                
+                // Check if it's a redirect (Netlify sometimes returns 303)
+                if (response.status === 303 || response.status === 302) {
+                    window.location.href = '/success';
+                } else {
+                    throw new Error('Submission failed. Please try again.');
+                }
             }
         } catch (error) {
             console.error('Form error:', error);

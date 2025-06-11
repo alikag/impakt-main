@@ -307,7 +307,7 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm" name="contact" method="POST" action="/success" data-netlify="true" netlify-honeypot="bot-field">
+                    <form class="contact-form" id="contactForm" name="contact" method="POST" action="/success.html" data-netlify="true" data-netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="contact">
                         <p class="hidden">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -384,7 +384,21 @@
     <!-- Main site functionality -->
     <script src="js/main.js"></script>
     <!-- Form handler -->
-    <script src="js/form-handler.js"></script>
+    <script>
+        // Check if we should use debug mode
+        const urlParams = new URLSearchParams(window.location.search);
+        const useSimpleForm = urlParams.get('simple') === 'true';
+        
+        if (useSimpleForm) {
+            console.log('Using simple form submission (no JavaScript)');
+            // Remove the form handler script
+        } else {
+            // Load the form handler
+            const script = document.createElement('script');
+            script.src = 'js/form-handler.js';
+            document.body.appendChild(script);
+        }
+    </script>
     <script src="security-enhancements.js"></script>
     <script>
         // Initialize security features

@@ -1,6 +1,10 @@
 # Force HTTPS
+http://impaktlabs.com/* https://impaktlabs.com/:splat 301!
+http://www.impaktlabs.com/* https://impaktlabs.com/:splat 301!
+https://www.impaktlabs.com/* https://impaktlabs.com/:splat 301!
+
+# Netlify subdomain
 http://impakt-main.netlify.app/* https://impakt-main.netlify.app/:splat 301!
 
-# Handle www to non-www (if needed in future)
-http://www.impakt-main.netlify.app/* https://impakt-main.netlify.app/:splat 301!
-https://www.impakt-main.netlify.app/* https://impakt-main.netlify.app/:splat 301!
+# Success page redirect (in case extension is missing)
+/success /success.html 200
