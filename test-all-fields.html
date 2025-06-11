@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test All Fields</title>
+</head>
+<body>
+    <h1>Test Form - All Fields</h1>
+    
+    <form name="test-all-fields" method="POST" netlify>
+        <p>Name: <input type="text" name="name" value="Test Name"></p>
+        <p>Email: <input type="email" name="email" value="test@example.com"></p>
+        <p>Phone: <input type="tel" name="phone" value="555-1234"></p>
+        <p>Company: <input type="text" name="company" value="Test Company"></p>
+        <p>Revenue: 
+            <select name="revenue">
+                <option value="1m-2.5m" selected>$1M - $2.5M</option>
+            </select>
+        </p>
+        <p>Message: <textarea name="message">This is a test message</textarea></p>
+        <p><button type="submit">Submit All Fields</button></p>
+    </form>
+    
+    <hr>
+    <p>All fields are pre-filled. Click submit to test if all fields are captured.</p>
+</body>
+</html>
