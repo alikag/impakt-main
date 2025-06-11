@@ -767,13 +767,14 @@ p {
     
     .nav-menu {
         position: fixed;
-        top: 60px;
+        top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         background: var(--white);
         flex-direction: column;
         padding: var(--spacing-lg);
+        padding-top: calc(60px + var(--spacing-lg));
         box-shadow: var(--shadow-lg);
         transform: translateX(100%);
         opacity: 0;
@@ -781,6 +782,7 @@ p {
         transition: all var(--transition-base);
         overflow-y: auto;
         z-index: 999;
+        height: 100vh;
     }
     
     .nav-menu.active {
@@ -790,9 +792,15 @@ p {
     }
     
     .nav-link {
-        padding: var(--spacing-sm) 0;
+        padding: var(--spacing-md) 0;
         font-size: var(--font-size-lg);
         border-bottom: 1px solid var(--gray-200);
+        display: block;
+        width: 100%;
+    }
+    
+    .nav-link:first-child {
+        margin-top: 0;
     }
     
     .nav-cta {
