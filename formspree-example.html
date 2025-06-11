@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formspree Alternative</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark-mode">
+    <div class="container" style="padding: 40px;">
+        <h1>Formspree Form (Alternative to Netlify)</h1>
+        <p>Sign up at <a href="https://formspree.io" target="_blank">formspree.io</a> and replace FORM_ID below</p>
+        
+        <!-- Replace YOUR_FORM_ID with actual Formspree form ID -->
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="max-width: 600px;">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <input type="text" name="company" placeholder="Company Name">
+            </div>
+            <div class="form-group">
+                <select name="revenue" required>
+                    <option value="">Annual Revenue Range</option>
+                    <option value="500k-1m">$500K - $1M</option>
+                    <option value="1m-2.5m">$1M - $2.5M</option>
+                    <option value="2.5m-5m">$2.5M - $5M</option>
+                    <option value="5m+">$5M+</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Tell us about your business" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>
