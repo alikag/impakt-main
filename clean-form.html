@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Form Test</title>
+</head>
+<body>
+    <h1>Clean Netlify Form</h1>
+    
+    <!-- Following Netlify docs exactly -->
+    <form name="clean-contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="clean-contact">
+        
+        <p>
+            <label>Name: <input type="text" name="name" /></label>
+        </p>
+        <p>
+            <label>Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+            <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+    
+    <hr>
+    
+    <h2>JavaScript Form (AJAX)</h2>
+    <form id="ajax-contact" name="ajax-contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="ajax-contact">
+        
+        <p>
+            <label>Name: <input type="text" name="name" /></label>
+        </p>
+        <p>
+            <label>Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+            <button type="submit">Submit with JS</button>
+        </p>
+    </form>
+    
+    <div id="result"></div>
+    
+    <script>
+    document.getElementById("ajax-contact").addEventListener("submit", e => {
+        e.preventDefault();
+        
+        const myForm = e.target;
+        const formData = new FormData(myForm);
+        
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            document.getElementById("result").innerHTML = "Form successfully submitted!";
+        })
+        .catch((error) => {
+            document.getElementById("result").innerHTML = "Error: " + error;
+        });
+    });
+    </script>
+</body>
+</html>
