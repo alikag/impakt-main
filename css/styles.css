@@ -212,7 +212,7 @@ p {
 .hero-image-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto var(--spacing-xl);
 }
 
@@ -1315,7 +1315,7 @@ body.dark-mode .nav-link {
     }
     
     .hero-image-wrapper {
-        max-width: 90%;
+        max-width: 500px;
     }
     
     body.dark-mode .nav-menu {
