@@ -99,7 +99,6 @@ contactForm.addEventListener('submit', async (e) => {
     
     // Get form data
     const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
     
     // Show loading state
     const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -108,19 +107,20 @@ contactForm.addEventListener('submit', async (e) => {
     submitButton.disabled = true;
     
     try {
-        // Use secure form submission if available
-        if (window.SecurityEnhancements) {
-            const secureData = await window.SecurityEnhancements.secureFormSubmit(data);
-            // In production, send secureData to your backend with HTTPS
-            await new Promise(resolve => setTimeout(resolve, 2000));
-        } else {
-            // Fallback to basic submission
-            await new Promise(resolve => setTimeout(resolve, 2000));
-        }
+        // Submit to Netlify Forms
+        const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        });
         
-        // Show success message
-        showNotification('Thank you! We\'ll be in touch within 24 hours.', 'success');
-        contactForm.reset();
+        if (response.ok) {
+            // Show success message
+            showNotification('Thank you! We\'ll be in touch within 24 hours.', 'success');
+            contactForm.reset();
+        } else {
+            throw new Error('Form submission failed');
+        }
     } catch (error) {
         // Show error message
         showNotification(error.message || 'Something went wrong. Please try again.', 'error');

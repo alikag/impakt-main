@@ -1376,6 +1376,11 @@ body:not(.loaded) * {
     -webkit-tap-highlight-color: transparent;
 }
 
+/* Hide honeypot field */
+.hidden {
+    display: none !important;
+}
+
 /* Improve tap targets on mobile */
 @media (max-width: 768px) {
     a, button, input, select, textarea {
