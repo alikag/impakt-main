@@ -6,7 +6,7 @@
     <!-- Main Page -->
     <url>
         <loc>https://impaktlabs.com/</loc>
-        <lastmod>2024-12-06T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-06T00:00:00+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.00</priority>
     </url>
@@ -14,7 +14,7 @@
     <!-- Success Page -->
     <url>
         <loc>https://impaktlabs.com/success</loc>
-        <lastmod>2024-12-06T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-06T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.30</priority>
     </url>

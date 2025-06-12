@@ -41,11 +41,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     
-    <!-- Fonts -->
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Fonts with font-display: swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -61,7 +67,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <!-- Security Enhancements -->
-    <script src="security-enhancements.js"></script>
+    <script src="security-enhancements.js" async></script>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -148,8 +154,11 @@
     </script>
 </head>
 <body class="dark-mode">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="#" class="logo">
@@ -163,7 +172,7 @@
                     <a href="#faq" class="nav-link">FAQ</a>
                     <a href="#contact" class="nav-link nav-cta">Sell Your Business</a>
                 </div>
-                <button class="mobile-toggle">
+                <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -173,12 +182,12 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="main-content" class="hero" role="main">
         <div class="container">
             <div class="hero-content">
                 <!-- Hero Image -->
                 <div class="hero-image-wrapper">
-                    <img src="images/tree-3.png" alt="Growth and Partnership" class="hero-image">
+                    <img src="images/tree-3.png" alt="Impakt Labs - Tree symbolizing business growth and long-term partnerships" class="hero-image" width="400" height="400">
                 </div>
                 <h1 class="hero-title">We Buy Wonderful Businesses</h1>
                 <p class="hero-subtitle">We build and invest in enduring businesses, from tech-driven ventures to physical service brands like Pink's Windows Hudson Valley, each with operational backbone, brand defensibility, and culture that scales.</p>
@@ -299,7 +308,7 @@
                     </div>
                 </div>
                 <div class="criteria-image">
-                    <img src="images/acquisition-criteria.png" alt="Illustration of acquisition criteria" loading="lazy" width="500" height="500" class="criteria-graphic">
+                    <img src="images/acquisition-criteria.png" alt="Infographic showing impakt Labs acquisition criteria: $500K-$5M purchase price, 3x price/profit ratio, managed and scalable operations" loading="lazy" width="500" height="500" class="criteria-graphic">
                 </div>
             </div>
         </div>
@@ -314,7 +323,7 @@
             <div class="holdings-grid">
                 <div class="holding-card">
                     <div class="holding-header">
-                        <img src="images/pinks-logo.png" alt="Pink's Windows Logo" class="holding-logo">
+                        <img src="images/pinks-logo.png" alt="Pink's Windows Hudson Valley company logo" class="holding-logo" width="120" height="120">
                         <div class="holding-title">
                             <h3>Pink's Windows Hudson Valley</h3>
                         </div>
@@ -333,8 +342,8 @@
                         </div>
                         
                         <div class="holding-images">
-                            <img src="images/pinks-team.JPG" alt="Pink's Windows Team" class="holding-image">
-                            <img src="images/pinks-job.jpeg" alt="Pink's Windows Job Site" class="holding-image">
+                            <img src="images/pinks-team.JPG" alt="Pink's Windows Hudson Valley professional cleaning team members in uniform" class="holding-image" loading="lazy" width="400" height="400">
+                            <img src="images/pinks-job.jpeg" alt="Pink's Windows team performing residential window cleaning service" class="holding-image" loading="lazy" width="400" height="400">
                         </div>
                     </div>
                 </div>
@@ -435,19 +444,24 @@
                         </p>
                         <h3>Start the Conversation</h3>
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required minlength="2" maxlength="100" autocomplete="name">
+                            <label for="contact-name" class="visually-hidden">Your Name</label>
+                            <input type="text" id="contact-name" name="name" placeholder="Your Name" required minlength="2" maxlength="100" autocomplete="name" aria-required="true">
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Email Address" required autocomplete="email" maxlength="255">
+                            <label for="contact-email" class="visually-hidden">Email Address</label>
+                            <input type="email" id="contact-email" name="email" placeholder="Email Address" required autocomplete="email" maxlength="255" aria-required="true">
                         </div>
                         <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Phone Number (Optional)" autocomplete="tel" pattern="[\d\s\-\+\(\)]+" maxlength="20">
+                            <label for="contact-phone" class="visually-hidden">Phone Number (Optional)</label>
+                            <input type="tel" id="contact-phone" name="phone" placeholder="Phone Number (Optional)" autocomplete="tel" pattern="[\d\s\-\+\(\)]+" maxlength="20">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="company" placeholder="Company Name" autocomplete="organization" maxlength="100">
+                            <label for="contact-company" class="visually-hidden">Company Name</label>
+                            <input type="text" id="contact-company" name="company" placeholder="Company Name" autocomplete="organization" maxlength="100">
                         </div>
                         <div class="form-group">
-                            <select name="revenue" required>
+                            <label for="contact-revenue" class="visually-hidden">Annual Revenue Range</label>
+                            <select id="contact-revenue" name="revenue" required aria-required="true">
                                 <option value="">Annual Revenue Range</option>
                                 <option value="500k-1m">$500K - $1M</option>
                                 <option value="1m-2.5m">$1M - $2.5M</option>
@@ -456,7 +470,9 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" placeholder="Tell us about your business (Optional)" rows="4" maxlength="1000"></textarea>
+                            <label for="contact-message" class="visually-hidden">Tell us about your business (Optional)</label>
+                            <textarea id="contact-message" name="message" placeholder="Tell us about your business (Optional)" rows="4" maxlength="1000" aria-describedby="message-help"></textarea>
+                            <span id="message-help" class="visually-hidden">Optional field to provide details about your business</span>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block" id="submit-button">Send Message</button>
                         <noscript>
@@ -498,16 +514,16 @@
         </div>
     </footer>
 
-    <!-- Three.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js"></script>
+    <!-- Three.js CDN - Defer loading for performance -->
+    <script src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js" defer></script>
     <!-- Ballpit animation -->
-    <script src="js/ballpit-elegant.js"></script>
+    <script src="js/ballpit-elegant.js" defer></script>
     <!-- Neural Background for Hero -->
-    <script src="js/neural-background.js"></script>
+    <script src="js/neural-background.js" defer></script>
     <!-- Mobile Performance Enhancements -->
-    <script src="js/mobile-performance.js"></script>
+    <script src="js/mobile-performance.js" defer></script>
     <!-- Main site functionality -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <!-- Form handler DISABLED for testing
     <script src="js/netlify-form.js"></script>
     -->
