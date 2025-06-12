@@ -95,8 +95,13 @@ window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
 
 // Notification system
 function showNotification(message, type = 'info') {
+    // Remove any existing notifications
+    const existing = document.querySelector('.notification');
+    if (existing) existing.remove();
+    
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
+    // Use textContent to prevent XSS
     notification.textContent = message;
     
     // Add styles

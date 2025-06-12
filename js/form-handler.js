@@ -27,6 +27,33 @@ document.addEventListener('DOMContentLoaded', function() {
             // Create form data
             const formData = new FormData(contactForm);
             
+            // Validate and sanitize form data if security enhancements are loaded
+            if (window.SecurityEnhancements) {
+                const formDataObj = {};
+                for (let [key, value] of formData.entries()) {
+                    formDataObj[key] = value;
+                }
+                
+                // Validate form
+                const errors = window.SecurityEnhancements.validateForm(formDataObj);
+                if (errors.length > 0) {
+                    throw new Error(errors.join('\n'));
+                }
+                
+                // Check rate limiting
+                const userEmail = formDataObj.email;
+                if (!window.SecurityEnhancements.rateLimiter.canSubmit(userEmail)) {
+                    throw new Error('Too many submissions. Please try again in a minute.');
+                }
+                
+                // Sanitize inputs
+                for (let key in formDataObj) {
+                    if (formDataObj[key] && typeof formDataObj[key] === 'string') {
+                        formData.set(key, window.SecurityEnhancements.sanitizeInput(formDataObj[key]));
+                    }
+                }
+            }
+            
             // Add form-name field for Netlify
             formData.append('form-name', 'contact');
             
@@ -87,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
+        // Use textContent to prevent XSS
         notification.textContent = message;
         
         notification.style.cssText = `
