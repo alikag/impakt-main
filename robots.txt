@@ -1,4 +1,4 @@
-# robots.txt for Impakt Labs - impaktlabs.com
+# robots.txt for IMPAKT - impaktlabs.com
 # Business acquisition firm specializing in companies $500K-$5M
 
 # Allow all legitimate web crawlers

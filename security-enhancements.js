@@ -1,4 +1,4 @@
-// Security Enhancements for impakt Labs Website
+// Security Enhancements for IMPAKT Website
 
 // 1. Input Sanitization Helper
 function sanitizeInput(input) {

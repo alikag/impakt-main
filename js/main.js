@@ -1,4 +1,4 @@
-// Main JavaScript file for impakt Labs website
+// Main JavaScript file for IMPAKT website
 
 // Mobile Navigation Toggle
 const mobileToggle = document.querySelector('.mobile-toggle');
