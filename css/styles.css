@@ -1918,7 +1918,7 @@ body.dark-mode .philosophy-statement {
     display: inline-block;
     font-size: var(--font-size-sm);
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--gray-600);
     margin-bottom: var(--spacing-md);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1934,14 +1934,14 @@ body.dark-mode .philosophy-statement {
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
-    color: var(--primary-color);
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: 500;
     transition: color var(--transition-fast);
 }
 
 .partner-linkedin:hover {
-    color: var(--primary-dark);
+    color: var(--accent-hover);
 }
 
 .partner-linkedin i {
