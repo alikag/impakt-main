@@ -190,7 +190,7 @@ p {
 .nav-cta {
     background: var(--primary-color);
     color: var(--white);
-    padding: var(--spacing-xs) var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
     border-radius: 8px;
     transition: all var(--transition-base);
 }
@@ -1858,12 +1858,13 @@ body.dark-mode .hero-tagline {
 }
 
 .philosophy-statement {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
     font-style: italic;
     color: var(--primary-color);
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
+    line-height: 1.4;
 }
 
 body.dark-mode .approach-philosophy {
@@ -2036,15 +2037,29 @@ body.dark-mode .contact-email:hover {
     .hero-description {
         font-size: var(--font-size-base);
         padding: 0 var(--spacing-sm);
+        text-align: left;
     }
 
     .hero-tagline {
         font-size: var(--font-size-lg);
+        text-align: left;
+    }
+
+    .hero-content {
+        text-align: left;
+    }
+
+    .hero-title {
+        text-align: left;
     }
 
     /* Focus section - single column on mobile */
     .about-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        text-align: left;
     }
 
     .partners-grid {
@@ -2056,8 +2071,13 @@ body.dark-mode .contact-email:hover {
         padding: var(--spacing-lg);
     }
 
+    .owners-content {
+        text-align: left;
+    }
+
     .owners-content p {
         font-size: var(--font-size-base);
+        text-align: left;
     }
 
     .contact-email {
@@ -2065,7 +2085,8 @@ body.dark-mode .contact-email:hover {
     }
 
     .philosophy-statement {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-xl);
+        text-align: left;
     }
 }
 
