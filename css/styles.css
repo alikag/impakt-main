@@ -36,9 +36,10 @@
     --dark-text-secondary: #a0a0a8;
     --dark-border: #2a2a32;
 
-    /* Typography - Adding serif for headings */
+    /* Typography - Founders Grotesk for brand/headings (Space Grotesk as fallback) */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-family-heading: 'Georgia', 'Times New Roman', serif;
+    --font-family-heading: 'founders-grotesk', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-family-brand: 'founders-grotesk', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
@@ -161,10 +162,12 @@ p {
 }
 
 .logo-text {
+    font-family: var(--font-family-brand);
     font-size: var(--font-size-xl);
-    font-weight: 800;
+    font-weight: 700;
     color: var(--dark-color);
-    letter-spacing: -0.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .nav-menu {
@@ -289,7 +292,10 @@ p {
 }
 
 .hero-title {
+    font-family: var(--font-family-brand);
     font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
     margin-bottom: var(--spacing-md);
     background: linear-gradient(135deg, var(--dark-color) 0%, var(--gray-700) 100%);
     -webkit-background-clip: text;
@@ -410,6 +416,9 @@ p {
 }
 
 .section-title {
+    font-family: var(--font-family-heading);
+    font-weight: 600;
+    letter-spacing: 0.02em;
     margin-bottom: var(--spacing-sm);
 }
 
@@ -853,6 +862,10 @@ p {
 }
 
 .footer-brand h4 {
+    font-family: var(--font-family-brand);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     color: var(--white);
     margin-bottom: var(--spacing-sm);
 }
@@ -1353,6 +1366,8 @@ body.dark-mode .hero-image {
 }
 
 body.dark-mode .hero-title {
+    font-family: var(--font-family-brand);
+    letter-spacing: 0.08em;
     background: linear-gradient(135deg, var(--dark-text) 0%, var(--dark-text-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
