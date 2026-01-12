@@ -6,33 +6,39 @@
 }
 
 :root {
-    /* Light Mode Colors */
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary-color: #10b981;
-    --dark-color: #111827;
-    --gray-900: #1f2937;
-    --gray-800: #374151;
-    --gray-700: #4b5563;
-    --gray-600: #6b7280;
-    --gray-500: #9ca3af;
-    --gray-400: #d1d5db;
-    --gray-300: #e5e7eb;
-    --gray-200: #f3f4f6;
-    --gray-100: #f9fafb;
-    --gray-50: #fafbfc;
+    /* Refined Color Palette - Moving away from default tech-blue */
+    --primary-color: #1a1a2e;
+    /* Deep slate - more sophisticated than tech-blue */
+    --primary-dark: #0f0f1a;
+    --accent-color: #c9a962;
+    /* Warm gold accent - adds character */
+    --accent-hover: #b8954d;
+    --secondary-color: #3d5a4c;
+    /* Muted forest green */
+    --dark-color: #0a0a0f;
+    --gray-900: #1a1a1f;
+    --gray-800: #2a2a32;
+    --gray-700: #4a4a55;
+    --gray-600: #6a6a75;
+    --gray-500: #8a8a95;
+    --gray-400: #b0b0b8;
+    --gray-300: #d0d0d5;
+    --gray-200: #e8e8eb;
+    --gray-100: #f4f4f6;
+    --gray-50: #fafafa;
     --white: #ffffff;
 
-    /* Dark Mode Colors */
-    --dark-bg: #0f172a;
-    --dark-surface: #1e293b;
-    --dark-surface-light: #334155;
-    --dark-text: #f1f5f9;
-    --dark-text-secondary: #cbd5e1;
-    --dark-border: #334155;
+    /* Dark Mode Colors - Less saturated, more refined */
+    --dark-bg: #0a0a0f;
+    --dark-surface: #141418;
+    --dark-surface-light: #1e1e24;
+    --dark-text: #e8e8eb;
+    --dark-text-secondary: #a0a0a8;
+    --dark-border: #2a2a32;
 
-    /* Typography */
+    /* Typography - Adding serif for headings */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-heading: 'Georgia', 'Times New Roman', serif;
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
@@ -52,16 +58,21 @@
     --spacing-2xl: 4rem;
     --spacing-3xl: 6rem;
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /* Shadows - Subtler */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 2px 8px -2px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 16px 40px -8px rgba(0, 0, 0, 0.12);
+
+    /* Border radius - Less rounded, more intentional */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
 
     /* Transitions */
     --transition-fast: 150ms ease;
-    --transition-base: 300ms ease;
-    --transition-slow: 500ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 400ms ease;
 }
 
 body {
@@ -88,9 +99,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 700;
+    font-family: var(--font-family-heading);
+    font-weight: 600;
     line-height: 1.2;
     color: var(--dark-color);
+    letter-spacing: -0.01em;
 }
 
 h1 {
@@ -188,17 +201,17 @@ p {
 }
 
 .nav-cta {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--accent-color);
+    color: var(--dark-color);
     padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     transition: all var(--transition-base);
+    font-weight: 500;
 }
 
 .nav-cta:hover {
-    background: var(--primary-dark);
+    background: var(--accent-hover);
     transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
 }
 
 .nav-cta::after {
@@ -324,46 +337,39 @@ p {
     flex-wrap: wrap;
 }
 
-/* Buttons */
+/* Buttons - Using warm accent color */
 .btn {
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-lg);
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     transition: all var(--transition-base);
     cursor: pointer;
     border: none;
     font-size: var(--font-size-base);
+    letter-spacing: 0.01em;
 }
 
 .btn-primary {
-    background: var(--primary-color);
-    color: var(--white);
-    box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.25);
+    background: var(--accent-color);
+    color: var(--dark-color);
 }
 
 .btn-primary:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.35);
+    background: var(--accent-hover);
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
-    background: var(--white);
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
 }
 
 .btn-secondary:hover {
-    background: var(--primary-color);
-    color: var(--white);
-    transform: translateY(-2px);
-}
-
-.btn-block {
-    width: 100%;
-    text-align: center;
+    background: var(--accent-color);
+    color: var(--dark-color);
 }
 
 /* Trust Bar */
@@ -431,7 +437,7 @@ p {
     text-align: center;
     padding: var(--spacing-lg);
     background: var(--gray-50);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     transition: all var(--transition-base);
 }
 
@@ -495,7 +501,7 @@ p {
     gap: var(--spacing-md);
     padding: var(--spacing-md);
     background: var(--white);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
 }
@@ -509,7 +515,7 @@ p {
     width: 60px;
     height: 60px;
     background: var(--primary-color);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -566,7 +572,7 @@ p {
 .holding-card {
     background: var(--gray-50);
     padding: var(--spacing-2xl);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     max-width: 1000px;
     margin: 0 auto;
@@ -605,7 +611,7 @@ p {
 .holding-highlights {
     background: var(--white);
     padding: var(--spacing-lg);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     margin-bottom: var(--spacing-lg);
     border: 1px solid var(--gray-200);
 }
@@ -653,7 +659,7 @@ p {
     width: 100%;
     height: 400px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
     transition: all var(--transition-base);
 }
@@ -729,7 +735,7 @@ p {
 .faq-item {
     background: var(--white);
     padding: var(--spacing-lg);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
 }
 
@@ -789,7 +795,7 @@ p {
 .contact-form-wrapper {
     background: var(--gray-100);
     padding: var(--spacing-xl);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
 }
 
 .contact-form h3 {
@@ -807,7 +813,7 @@ p {
     width: 100%;
     padding: var(--spacing-sm);
     border: 2px solid var(--gray-300);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     font-size: var(--font-size-base);
     font-family: var(--font-family);
     transition: all var(--transition-fast);
@@ -1553,18 +1559,19 @@ body.dark-mode .footer-bottom {
     border-top-color: var(--dark-border);
 }
 
-/* Dark Mode Toggle Button */
+/* Dark Mode Toggle Button - Hidden for cleaner design */
 .theme-toggle {
+    display: none;
+    /* Removing floating toggle - too template-y */
     position: fixed;
     bottom: 30px;
     right: 30px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: var(--primary-color);
+    background: var(--accent-color);
     border: none;
     cursor: pointer;
-    display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow-lg);
@@ -1804,7 +1811,7 @@ body:not(.loaded) * {
 .criteria-graphic {
     max-width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
 }
 
@@ -1859,9 +1866,9 @@ body.dark-mode .hero-tagline {
 
 .philosophy-statement {
     font-size: var(--font-size-2xl);
-    font-weight: 700;
+    font-weight: 600;
     font-style: italic;
-    color: var(--primary-color);
+    color: var(--accent-color);
     max-width: 650px;
     margin: 0 auto;
     line-height: 1.4;
@@ -1872,7 +1879,7 @@ body.dark-mode .approach-philosophy {
 }
 
 body.dark-mode .philosophy-statement {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 /* Partners Section */
@@ -1890,7 +1897,7 @@ body.dark-mode .philosophy-statement {
 
 .partner-card {
     background: var(--white);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
     transition: transform var(--transition-base), box-shadow var(--transition-base);
@@ -2004,18 +2011,18 @@ body.dark-mode .owners-content p {
 .contact-email {
     display: inline-block;
     font-size: var(--font-size-2xl);
-    font-weight: 600;
-    color: var(--primary-color);
+    font-weight: 500;
+    color: var(--accent-color);
     text-decoration: none;
     padding: var(--spacing-sm) var(--spacing-lg);
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    border-radius: var(--radius-sm);
     transition: all var(--transition-base);
 }
 
 .contact-email:hover {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--accent-color);
+    color: var(--dark-color);
 }
 
 body.dark-mode .contact-intro {
@@ -2023,13 +2030,13 @@ body.dark-mode .contact-intro {
 }
 
 body.dark-mode .contact-email {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 body.dark-mode .contact-email:hover {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--accent-color);
+    color: var(--dark-color);
 }
 
 /* Mobile Adjustments for New Sections */
