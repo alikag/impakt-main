@@ -1744,4 +1744,256 @@ body:not(.loaded) * {
     .hero-graphic{max-width:600px;}
 }
 
-.criteria-graphic{max-width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow-md);} 
+.criteria-graphic{max-width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow-md);}
+
+/* ================================
+   New Sections - Impakt Labs Refresh
+   ================================ */
+
+/* Hero Description Paragraphs */
+.hero-description {
+    font-size: var(--font-size-lg);
+    color: var(--gray-600);
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+    line-height: 1.7;
+}
+
+.hero-tagline {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: var(--spacing-lg);
+}
+
+body.dark-mode .hero-description {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .hero-tagline {
+    color: var(--dark-text);
+}
+
+/* Approach/How We Operate Section */
+.approach-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.approach-philosophy {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--gray-200);
+}
+
+.philosophy-statement {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--primary-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+body.dark-mode .approach-philosophy {
+    border-top-color: var(--dark-border);
+}
+
+body.dark-mode .philosophy-statement {
+    color: var(--primary-color);
+}
+
+/* Partners Section */
+.partners-section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partner-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.partner-info h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xs);
+    color: var(--dark-color);
+}
+
+.partner-role {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.partner-info p {
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.partner-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.partner-linkedin:hover {
+    color: var(--primary-dark);
+}
+
+.partner-linkedin i {
+    font-size: var(--font-size-lg);
+}
+
+body.dark-mode .partner-card {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .partner-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .partner-info h3 {
+    color: var(--dark-text);
+}
+
+body.dark-mode .partner-info p {
+    color: var(--dark-text-secondary);
+}
+
+/* Working With Owners Section */
+.owners-section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.owners-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.owners-content p {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: var(--gray-600);
+    margin-bottom: var(--spacing-md);
+}
+
+.owners-content p:last-child {
+    margin-bottom: 0;
+}
+
+body.dark-mode .owners-content p {
+    color: var(--dark-text-secondary);
+}
+
+/* Simplified Contact Section */
+.contact-simple {
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+}
+
+.contact-content-centered {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-intro {
+    font-size: var(--font-size-lg);
+    color: var(--gray-600);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-email {
+    display: inline-block;
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    transition: all var(--transition-base);
+}
+
+.contact-email:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+body.dark-mode .contact-intro {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .contact-email {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .contact-email:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Mobile Adjustments for New Sections */
+@media (max-width: 768px) {
+    .hero-description {
+        font-size: var(--font-size-base);
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero-tagline {
+        font-size: var(--font-size-lg);
+    }
+    
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .partner-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .owners-content p {
+        font-size: var(--font-size-base);
+    }
+    
+    .contact-email {
+        font-size: var(--font-size-xl);
+    }
+    
+    .philosophy-statement {
+        font-size: var(--font-size-lg);
+    }
+}
+
+/* Animation delays for new hero elements */
+.hero-description { animation-delay: 0.25s; }
+.hero-tagline { animation-delay: 0.15s; } 
