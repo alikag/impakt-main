@@ -1838,8 +1838,16 @@ body.dark-mode .hero-tagline {
 
 /* Approach/How We Operate Section */
 .approach-list {
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* Override criteria-wrapper for approach section */
+#approach .criteria-wrapper {
+    display: block;
 }
 
 .approach-philosophy {
@@ -1873,9 +1881,9 @@ body.dark-mode .philosophy-statement {
 
 .partners-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-xl);
-    max-width: 1200px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -2034,6 +2042,11 @@ body.dark-mode .contact-email:hover {
         font-size: var(--font-size-lg);
     }
 
+    /* Focus section - single column on mobile */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
     .partners-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -2053,6 +2066,23 @@ body.dark-mode .contact-email:hover {
 
     .philosophy-statement {
         font-size: var(--font-size-lg);
+    }
+}
+
+/* Tablet breakpoint */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .partners-grid .partner-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 350px;
+        margin: 0 auto;
     }
 }
 
