@@ -4,3 +4,17 @@ __pycache__/
 *.py[cod]
 node_modules/
 .vscode/
+
+# Test files
+test*.html
+*-test.html
+*-form.html
+form-*.html
+
+# Local dev
+server.py
+*.log
+
+# Sensitive docs
+*SETUP*.md
+*TROUBLESHOOTING*.md
