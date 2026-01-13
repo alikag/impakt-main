@@ -1,5 +1,12 @@
 // Neural Noise Background Effect
 (function() {
+    // Skip on mobile devices - too heavy
+    const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (isMobile) {
+        console.log('[Neural] Disabled on mobile for performance');
+        return;
+    }
+
     // Create canvas element
     const canvas = document.createElement('canvas');
     canvas.id = 'neuro';
