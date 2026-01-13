@@ -221,8 +221,34 @@ p {
     display: none;
 }
 
-.mobile-toggle {
+/* Mobile Actions (contact icon + hamburger) */
+.mobile-actions {
     display: none;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.mobile-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: var(--dark-text);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.mobile-contact i {
+    font-size: 1.25rem;
+}
+
+.mobile-contact:hover {
+    color: var(--accent-color);
+}
+
+.mobile-toggle {
+    display: flex;
     flex-direction: column;
     gap: 4px;
     background: none;
@@ -928,10 +954,14 @@ p {
         padding: var(--spacing-sm) 0;
     }
 
-    .mobile-toggle {
+    .mobile-actions {
         display: flex;
         position: relative;
         z-index: 1001;
+    }
+
+    .mobile-toggle {
+        display: flex;
     }
 
     .nav-menu {
@@ -1349,6 +1379,14 @@ body.dark-mode .nav-link:hover {
 
 body.dark-mode .mobile-toggle span {
     background: var(--dark-text);
+}
+
+body.dark-mode .mobile-contact {
+    color: var(--dark-text);
+}
+
+body.dark-mode .mobile-contact:hover {
+    color: var(--accent-color);
 }
 
 /* Dark Mode Hero */
