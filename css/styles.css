@@ -234,7 +234,7 @@ p {
     justify-content: center;
     width: 44px;
     height: 44px;
-    color: var(--dark-text);
+    color: var(--accent-color);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
@@ -244,7 +244,7 @@ p {
 }
 
 .mobile-contact:hover {
-    color: var(--accent-color);
+    color: var(--accent-hover);
 }
 
 .mobile-toggle {
@@ -1382,11 +1382,11 @@ body.dark-mode .mobile-toggle span {
 }
 
 body.dark-mode .mobile-contact {
-    color: var(--dark-text);
+    color: var(--accent-color);
 }
 
 body.dark-mode .mobile-contact:hover {
-    color: var(--accent-color);
+    color: var(--accent-hover);
 }
 
 /* Dark Mode Hero */
