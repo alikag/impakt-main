@@ -204,16 +204,19 @@ p {
 }
 
 .nav-cta {
-    background: var(--accent-color);
-    color: #0a0a0f !important;
+    background: transparent;
+    color: var(--dark-text) !important;
     padding: var(--spacing-sm) var(--spacing-lg);
+    border: 1px solid var(--dark-text-secondary);
     border-radius: var(--radius-sm);
     transition: all var(--transition-base);
     font-weight: 600;
 }
 
 .nav-cta:hover {
-    background: var(--accent-hover);
+    background: var(--accent-color);
+    color: #0a0a0f !important;
+    border-color: var(--accent-color);
     transform: translateY(-1px);
 }
 
